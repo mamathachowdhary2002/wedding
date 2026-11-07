@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#3b1018">
+<title>You're Invited | Jayasree & Vamsi Krishna </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#4b111d;--wine2:#741e2b;--gold:#d8ad60;--gold2:#f4dfad;--cream:#fff4df;--ink:#54252a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--cream);font-family:'Cormorant Garamond',serif;background:radial-gradient(ellipse at 50% 15%,#8c3c35 0,#43131c 48%,#1d0b12 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(#f5d99b 1px,transparent 1px),radial-gradient(#f5d99b 1px,transparent 1px);background-size:47px 47px,91px 91px;background-position:0 0,20px 25px}
+body:after{content:"";position:fixed;inset:12px;border:1px solid #c99a4e66;pointer-events:none;z-index:1}
+.ornament{color:#e4bf78;letter-spacing:.55em;font-size:1.25rem;text-shadow:0 0 14px #f4d28b88}
+.topline{font-size:.78rem}
+.hero{border:1px solid #d5ad69;box-shadow:0 0 0 7px #4a1820,0 0 0 8px #bd8c48,0 18px 50px #08030688}
+.intro{padding-top:8px}
+.intro:before{content:"❧  ✦  ❧";display:block;color:#e4bf78;letter-spacing:.55em;font-size:1.15rem;margin:8px 0}
+h1{letter-spacing:.01em}
+
+.gold-rain{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:5}
+.spark{position:absolute;top:-20px;width:4px;height:8px;border-radius:50%;background:linear-gradient(#fff3bf,#c68a32);box-shadow:0 0 9px #f4d78b;animation:fall linear infinite;opacity:.8}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(520deg);opacity:.12}}
+.wrap{width:min(960px,94vw);margin:auto;position:relative;z-index:2;padding:28px 0 50px}
+.topline{text-align:center;letter-spacing:.32em;text-transform:uppercase;color:var(--gold2);font-size:.82rem;margin:10px 0 20px}
+.hero{height:clamp(230px,38vw,390px);max-width:720px;margin:0 auto -28px;position:relative;overflow:hidden;border-radius:48% 48% 12px 12px;mask-image:linear-gradient(#000 80%,transparent 100%);-webkit-mask-image:linear-gradient(#000 80%,transparent 100%)}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:50% 5%;filter:saturate(.94);transform:scale(1.02)}
+.intro{text-align:center;position:relative;z-index:2}
+.eyebrow{font-size:1.05rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold2)}
+h1{font-family:'Great Vibes',cursive;font-size:clamp(3.3rem,9vw,6rem);font-weight:400;line-height:1;margin:12px 0 8px;color:#ffe8b8;text-shadow:0 3px 22px #e6b65b55}
+.intro p{font-size:1.25rem;color:#f8e5c4;margin:0 0 26px}
+.envelope-area{display:flex;justify-content:center;perspective:1200px;padding:10px 0 28px}
+.envelope{width:min(590px,88vw);height:300px;position:relative;cursor:pointer;filter:drop-shadow(0 22px 30px #09030699);transition:transform .5s}
+.envelope:hover{transform:translateY(-5px)}
+.env-back{position:absolute;inset:0;background:linear-gradient(135deg,#f7e5bf,#d5ad70);border:1px solid #f9dfa3;border-radius:8px}
+.env-front{position:absolute;inset:0;background:linear-gradient(145deg,#f1d7a6,#c99b57);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);border-radius:8px}
+.env-flap{position:absolute;inset:0;background:linear-gradient(145deg,#ffedc9,#d7b16f);clip-path:polygon(0 0,100% 0,50% 58%);transform-origin:top;transition:transform 1s cubic-bezier(.2,.7,.2,1);z-index:4;filter:drop-shadow(0 5px 3px #75451b33)}
+.seal{position:absolute;z-index:6;left:50%;top:53%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#f8df9b,#a66c2d 75%);border:2px solid #f8dfaa;box-shadow:0 3px 12px #633b1c88;color:#6d2a20;font-size:2rem;transition:opacity .4s}
+.envelope-label{position:absolute;z-index:5;left:0;right:0;top:17%;text-align:center;color:#7b431f;font-family:'Great Vibes',cursive;font-size:2.5rem;text-shadow:0 1px #fff8}
+.open-hint{font-size:1rem;color:#f5dca9;letter-spacing:.12em;text-align:center;margin-top:-10px}
+.opened .env-flap{transform:rotateX(180deg);z-index:1}
+.opened .seal{opacity:0;pointer-events:none}
+.opened .envelope{cursor:default}
+.invitation{width:min(760px,94vw);margin:10px auto 0;padding:clamp(30px,7vw,70px);text-align:center;color:var(--ink);background:radial-gradient(ellipse at 50% 0%,#fffdf0 0,#fff3d9 48%,#f0d5a5 100%);border:2px solid #c99a4e;outline:1px solid #f8e2ad;outline-offset:-9px;box-shadow:0 24px 75px #09030699;position:relative;display:none;animation:rise 1s ease both;isolation:isolate}
+.invitation:after{content:"";position:absolute;inset:17px;border:1px solid #c99a4e88;pointer-events:none;z-index:-1}
+.corner{position:absolute;color:#b17b36;font-size:2rem;line-height:1;z-index:2}
+.corner.tl{top:21px;left:25px}.corner.tr{top:21px;right:25px;transform:scaleX(-1)}.corner.bl{bottom:21px;left:25px;transform:scaleY(-1)}.corner.br{bottom:21px;right:25px;transform:scale(-1)}
+.crest{width:82px;height:82px;margin:0 auto 14px;border-radius:50%;border:1px solid #c99a4e;display:grid;place-items:center;color:#a66f2d;font-size:2.2rem;background:radial-gradient(circle,#fff9e9,#eed29b);box-shadow:0 0 0 5px #f7e7c5,0 0 0 6px #c99a4e66}
+.opened .invitation{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(45px)}to{opacity:1;transform:translateY(0)}}
+.invitation:before,.invitation:after{content:"✦  ❧  ✦";display:block;color:#b5813b;letter-spacing:.5em;font-size:1.2rem}
+.smallcaps{letter-spacing:.22em;text-transform:uppercase;font-size:.9rem;color:#95652e;margin:18px 0 8px}
+.names{font-family:'Great Vibes',cursive;font-size:clamp(2.8rem,8vw,4.8rem);line-height:1.05;color:#711e2c;margin:5px 0}
+.amp{font-size:2rem;color:#b27b38;margin:3px}
+.message{font-size:1.35rem;line-height:1.5;margin:12px auto 26px;max-width:520px}
+.rule{width:90px;height:1px;background:#c59a55;margin:22px auto}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0}
+.detail{padding:22px 14px;border:1px solid #c99a4e;background:linear-gradient(145deg,#fffaf0,#f8e8c8);box-shadow:inset 0 0 0 4px #fff8e9,0 6px 16px #9d71301a;position:relative}
+.detail:before,.detail:after{content:"✦";position:absolute;color:#bd8a43;font-size:.8rem;top:7px}.detail:before{left:9px}.detail:after{right:9px}
+.detail .icon{font-size:1.8rem}
+.names{ text-shadow:0 1px 0 #fff9,0 3px 12px #b9813822 }
+.ornate-divider{display:flex;align-items:center;justify-content:center;gap:14px;color:#b5813b;margin:20px 0;font-size:1.25rem}
+.ornate-divider:before,.ornate-divider:after{content:"";height:1px;width:min(110px,22vw);background:linear-gradient(90deg,transparent,#bd8a43)}
+.ornate-divider:after{transform:scaleX(-1)}
+.detail .icon{font-size:1.55rem;color:#a36b2d}
+.detail h3{font-family:'Great Vibes',cursive;font-size:2rem;font-weight:400;margin:3px 0;color:#7b2630}
+.detail p{font-size:1.15rem;margin:0;line-height:1.4}
+.address{font-size:1.12rem;line-height:1.5;max-width:550px;margin:8px auto 22px}
+.map-btn{display:inline-block;padding:12px 24px;border:1px solid #a97737;color:#70232b;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem;transition:.25s}
+.map-btn:hover{background:#70232b;color:#fff0d1}
+.closing{font-family:'Great Vibes',cursive;font-size:2rem;color:#812b35;margin:25px 0 8px}
+footer{text-align:center;color:#d9b77c;font-size:.9rem;letter-spacing:.12em;margin-top:32px}
+@media(max-width:560px){.envelope{height:230px}.seal{width:55px;height:55px}.envelope-label{font-size:2rem}.details{grid-template-columns:1fr}.hero{height:250px}.topline{font-size:.7rem}.message{font-size:1.2rem}}
+</style>
+</head>
+<body>
+<div class="gold-rain" id="goldRain" aria-hidden="true"></div>
+<audio id="inviteMusic" loop preload="auto" autoplay></audio>
+
+<main class="wrap">
+  <div class="topline">A celebration of love · An invitation from our families</div>
+  <div class="hero"><img src="image1.png" alt="Anime-inspired bride and groom illustration"></div>
+  <header class="intro">
+    <div class="eyebrow">With joy in our hearts</div>
+    <h1>You're Invited</h1>
+    <p>To celebrate the beginning of forever</p>
+  </header>
+
+  <section class="envelope-area" id="envelopeArea" aria-label="Open your invitation">
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open engagement invitation">
+      <div class="env-back"></div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <div class="envelope-label">A special invitation</div>
+      <div class="seal">❀</div>
+    </div>
+  </section>
+  <div class="open-hint" id="openHint">✧ TAP THE ENVELOPE TO OPEN ✧</div>
+
+  <section class="invitation" id="invitation">
+    <span class="corner tl">❧</span><span class="corner tr">❧</span><span class="corner bl">❧</span><span class="corner br">❧</span>
+    <div class="crest">❀</div>
+    <div class="ornament">✧ ❦ ✧</div>
+    <div class="smallcaps">Together with our families</div>
+    <div class="names">Jayasree M</div>
+    <div class="amp">♡ &amp; ♡</div>
+    <div class="names">Vamsi Krishna B</div>
+    <div class="ornate-divider">❦</div>
+    <p class="message">Cordially invite you to join us as we celebrate our engagement. Your presence and blessings will make our special day even more beautiful.</p>
+    <div class="details">
+      <div class="detail">
+        <div class="icon">◷</div><h3>Time</h3>
+        <p>9:00 AM – 10:00 AM<br><em>Lunch follows</em></p>
+      </div>
+      <div class="detail">
+        <div class="icon">⌖</div><h3>Venue</h3>
+        <p><strong>Sri Balaji Convention Centre</strong></p>
+      </div>
+    </div>
+    <div class="ornate-divider">✧ ❦ ✧</div>
+    <div class="smallcaps">Location</div>
+    <a class="map-btn" href="https://maps.app.goo.gl/AhS4F2oRzZBHRPG3A" target="_blank" rel="noopener">View venue on Google Maps ↗</a>
+    <div class="smallcaps">Address</div>
+    <p class="address">SY NO:47-1C2, 62 Patnam Village,<br>Thavanampalli Mandal, Patnam,<br>Andhra Pradesh 517131</p>
+    <div class="ornate-divider">❦</div>
+    <p class="closing">Your presence will make our celebration even more special!</p>
+    <p class="message">With love,<br><strong>Jayasree &amp; Vamsi Krishna</strong></p>
+    <div class="smallcaps">We look forward to celebrating with you</div>
+  </section>
+  <footer>MADE WITH LOVE &amp; A LITTLE MAGIC ✦</footer>
+</main>
+
+<script>
+// Paste a direct audio file URL (MP3, WAV, or M4A) here.
+const MUSIC_URL = "music.mp3";
+const audio = document.getElementById("inviteMusic");
+const envelope = document.getElementById("envelope");
+const hint = document.getElementById("openHint");
+let musicReady = false;
+let playbackStarted = false;
+
+function prepareMusic(){
+  if (!musicReady && MUSIC_URL && !MUSIC_URL.includes("PASTE_YOUR")) {
+    audio.src = MUSIC_URL;
+    musicReady = true;
+  }
+}
+async function tryMusic(){
+  prepareMusic();
+  if (!musicReady || playbackStarted) return;
+  try { await audio.play(); playbackStarted = true; }
+  catch (err) { /* Autoplay was blocked; retry after the visitor's first interaction. */ }
+}
+// Attempt to play as soon as the invitation page loads.
+window.addEventListener("load", tryMusic);
+// If browser autoplay policy blocks sound, start it on the first visitor interaction.
+["pointerdown", "touchstart", "keydown"].forEach(eventName => {
+  window.addEventListener(eventName, tryMusic, { once: true, passive: true });
+});
+function openInvitation(){
+  if (document.body.classList.contains("opened")) return;
+  document.body.classList.add("opened");
+  hint.textContent = "✧ WITH LOVE, JAYASREE & VAMSI KRISHNA ✧";
+  tryMusic();
+  setTimeout(()=>document.getElementById("invitation").scrollIntoView({behavior:"smooth",block:"start"}),650);
+}
+envelope.addEventListener("click", openInvitation);
+envelope.addEventListener("keydown", e => { if(e.key==="Enter" || e.key===" "){e.preventDefault();openInvitation();} });
+
+// Fine gold confetti and softly glowing falling particles.
+const rain = document.getElementById("goldRain");
+for(let i=0;i<90;i++){
+  const s=document.createElement("i");
+  s.className="spark";
+  s.style.left=Math.random()*100+"%";
+  s.style.animationDuration=(5+Math.random()*10)+"s";
+  s.style.animationDelay=(-Math.random()*14)+"s";
+  s.style.setProperty("--drift",(Math.random()*170-85)+"px");
+  s.style.opacity=(.2+Math.random()*.75).toString();
+  s.style.transform=`scale(${.45+Math.random()*1.5})`;
+  rain.appendChild(s);
+}
+</script>
+</body>
+</html>
